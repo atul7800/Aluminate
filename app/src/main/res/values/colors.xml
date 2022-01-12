@@ -17,4 +17,7 @@
     <color name="orange">#FF9800</color>
     <color name="green">#17a08b</color>
     <color name="lightGreen">#ECF8F6</color>
+    <color name="colorPrimary">#3eaeae</color>
+    <color name="colorPrimaryDark">#226e6e</color>
+    <color name="colorAccent">#226e6e</color>
 </resources>

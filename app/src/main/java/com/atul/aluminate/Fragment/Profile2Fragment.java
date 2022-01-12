@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.atul.aluminate.ChatActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -42,6 +44,7 @@ public class Profile2Fragment extends Fragment {
     FirebaseAuth auth;
     FirebaseStorage storage;
     FirebaseDatabase database;
+    ImageView message;
 
     public Profile2Fragment() {
         // Required empty public constructor
@@ -145,6 +148,14 @@ public class Profile2Fragment extends Fragment {
             }
         });
 
+        //chatting
+        binding.message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ChatActivity.class));
+            }
+        });
+
         return binding.getRoot();
     }
 
@@ -206,5 +217,11 @@ public class Profile2Fragment extends Fragment {
             }
         }
 
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        getActivity().finish();
     }
 }

@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.atul.aluminate.Fragment.MessagesFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.iammert.library.readablebottombar.ReadableBottomBar;
 import com.atul.aluminate.Fragment.AddPostFragment;
@@ -68,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 4:
                         transaction.replace(R.id.content, new Profile2Fragment());
+                        binding.toolbar.setVisibility(View.GONE);
+                        break;
+                    case 5:
+                        transaction.replace(R.id.content, new MessagesFragment());
                         binding.toolbar.setVisibility(View.VISIBLE);
                         break;
 
